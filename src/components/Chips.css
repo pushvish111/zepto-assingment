@@ -1,0 +1,155 @@
+/* styles.css */
+.auto-complete-container {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+.auto-complete-header {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2196F3;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeInUp 1s ease; /* Fade in animation */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.selected-users-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.selected-user {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  background-color: #f5f5f5;
+  animation: fadeIn 0.5s ease; /* Fade in animation for selected users */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.user-thumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.remove-icon {
+  cursor: pointer;
+  margin-left: 8px;
+  color: #FF5252;
+}
+
+.user-input-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  animation: scaleIn 1s ease; /* Scale in animation for input container */
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.user-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #2196F3;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  transition: border-bottom-color 0.3s ease, background-color 0.3s ease;
+  outline: none;
+  background-color: #f5f5f5;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  border-radius: 0 0 5px 5px;
+  display: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: top;
+  opacity: 0;
+  max-height: 300px;
+}
+
+.dropdown li {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  text-align: left;
+  animation: slideIn 0.5s ease; /* Slide in animation for dropdown items */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.dropdown li img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.dropdown li span {
+  font-weight: bold;
+}
+
+.user-input-container:hover .dropdown,
+.user-input-container:focus-within .dropdown {
+  display: block;
+  opacity: 1;
+}
